@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -40,9 +39,9 @@
     </style>
     <script>
         function checkAnswer(question, correctOption) {
-            const selectedOption = document.querySelector(`input[name="question${question}"]:checked`).value;
+            const selectedOption = document.querySelector(`input[name="question${question}"]:checked`);
             const result = document.getElementById('result');
-            if (selectedOption === correctOption) {
+            if (selectedOption && selectedOption.value === correctOption) {
                 result.innerHTML += `<p>Pregunta ${question}: ¡Correcto!</p>`;
             } else {
                 result.innerHTML += `<p>Pregunta ${question}: Incorrecto. La respuesta correcta es ${correctOption}.</p>`;
